@@ -41,9 +41,12 @@ class DataIngestion:
             self.mongo_client =pymongo.MongoClient(MONGO_DB_URL)
             collection =self.mongo_client[database_name][collection_name]
             
+            # converting the collection data to dataframe
             df = pd.DataFrame(list(collection.find()))
+            # drop the _id column if exist and replace na with np.nan
             if "_id" in df.columns.to_list():
                 df=df.drop(columns=["_id"], axis=1)
+            # replace na with np.nan
             df.replace({"na":np.nan},inplace=True)
             return df 
         
@@ -53,6 +56,7 @@ class DataIngestion:
     
     def export_data_into_feature_store(self,dataframe= pd.DataFrame):
         try:
+            # initialize the feature store file path
             feature_store_file_path = self.data_ingestion_config.feature_store_file_path
             # creating folder 
             dir_path = os.path.dirname(feature_store_file_path)
@@ -101,12 +105,11 @@ class DataIngestion:
             dataframe = self.export_data_into_feature_store(dataframe)
             self.split_data_as_train_test(dataframe)
             
-            dataingestionartifact = DataIngestionArtifact(trained_file_path=self.data_ingestion_config.training_file_path,
-                                                         test_file_path= self.data_ingestion_config.testing_file_path)
+            dataingestionartifact = DataIngestionArtifact(
+                trained_file_path=self.data_ingestion_config.training_file_path,
+                test_file_path= self.data_ingestion_config.testing_file_path)
             
             return dataingestionartifact
-
-            
             
         except Exception as e:
             raise NetworkSecurityException(e,sys)

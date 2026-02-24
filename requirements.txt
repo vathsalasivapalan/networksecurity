@@ -7,7 +7,11 @@ pymongo[srv]==3.6
 scikit-learn
 dill
 pyaml
-
-
+matplotlib
+seaborn
+scikit-learn
+xgboost
+statsmodels
+imbalanced-learn
 
 ## -e . 

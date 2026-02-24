@@ -2,14 +2,15 @@ import os
 import sys
 import json
 
-
-from dotenv import load_dotenv  # MONGO_DB_URL 
+# import dotenv for load the data .
+from dotenv import load_dotenv  # MONGO_DB_URL # 
 load_dotenv()
 
+# using os for get the data from env file
 MONGO_DB_URL = os.getenv("MONGO_DB_URL")
 print(MONGO_DB_URL)
 
-
+# for certificate authority we are using certifi package
 import certifi
 ca = certifi.where() # certificate authourity
 
@@ -31,6 +32,7 @@ class NetworkDataExtract():
     
     def cv_to_json_convertor(self,file_path):
         try:
+            # 
             data = pd.read_csv(file_path)
             data.reset_index(drop=True,inplace=True)
             records =list(json.loads(data.T.to_json()).values())
@@ -45,7 +47,7 @@ class NetworkDataExtract():
             self.database = database
             self.collection = collection
             self.records = records 
-            
+            # connect to mongodb and insert the data
             self.mongo_client = pymongo.MongoClient(MONGO_DB_URL)
             self.database =self.mongo_client[self.database]
             
