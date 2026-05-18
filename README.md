@@ -15,40 +15,18 @@ Classifies URLs as phishing or legitimate using a trained ML model. Exposes pred
 | Deployment | Docker, GitHub Actions |
 
 ## How to run
-<<<<<<< HEAD
-
-=======
->>>>>>> 08c12b6a5a93652c4185fd1d66954f7ba58e111f
-```bash
-git clone https://github.com/vathsalasivapalan/networksecurity
-cd networksecurity
-pip install -r requirements.txt
-python main.py
-uvicorn app:app --reload
-```
+1. Clone the repo
+2. Run: pip install -r requirements.txt
+3. Run: python main.py
+4. Run: uvicorn app:app --reload
+5. Open: http://localhost:8000/docs
 
 ## Pipeline
-<<<<<<< HEAD
-
-=======
->>>>>>> 08c12b6a5a93652c4185fd1d66954f7ba58e111f
 MongoDB → Data Ingestion → Validation → Transformation → Model Training → MLflow → FastAPI
-
-## Model performance
-| Metric | Score |
-|--------|-------|
-| Accuracy | XX% |
-| F1 Score | X.XX |
-| Precision | X.XX |
-| Recall | X.XX |
 
 ## Skills demonstrated
 - End-to-end MLOps pipeline
 - Experiment tracking with MLflow
 - FastAPI REST endpoint
 - MongoDB data ingestion
-<<<<<<< HEAD
-- Docker + GitHub Actions CI/CD
-=======
-- Docker + GitHub Actions CI/CD
->>>>>>> 08c12b6a5a93652c4185fd1d66954f7ba58e111f
+- Docker and GitHub Actions CI/CD
