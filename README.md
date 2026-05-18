@@ -1,4 +1,4 @@
-# Network Security Project: Phishing Data
+# Network Security — Phishing URL Detection
 
 An end-to-end MLOps pipeline that detects phishing URLs using machine learning. Built with FastAPI, MLflow, MongoDB, Docker, and GitHub Actions CI/CD.
 
