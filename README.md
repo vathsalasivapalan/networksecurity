@@ -15,7 +15,10 @@ Classifies URLs as phishing or legitimate using a trained ML model. Exposes pred
 | Deployment | Docker, GitHub Actions |
 
 ## How to run
+<<<<<<< HEAD
 
+=======
+>>>>>>> 08c12b6a5a93652c4185fd1d66954f7ba58e111f
 ```bash
 git clone https://github.com/vathsalasivapalan/networksecurity
 cd networksecurity
@@ -25,7 +28,10 @@ uvicorn app:app --reload
 ```
 
 ## Pipeline
+<<<<<<< HEAD
 
+=======
+>>>>>>> 08c12b6a5a93652c4185fd1d66954f7ba58e111f
 MongoDB → Data Ingestion → Validation → Transformation → Model Training → MLflow → FastAPI
 
 ## Model performance
@@ -41,4 +47,8 @@ MongoDB → Data Ingestion → Validation → Transformation → Model Training 
 - Experiment tracking with MLflow
 - FastAPI REST endpoint
 - MongoDB data ingestion
+<<<<<<< HEAD
 - Docker + GitHub Actions CI/CD
+=======
+- Docker + GitHub Actions CI/CD
+>>>>>>> 08c12b6a5a93652c4185fd1d66954f7ba58e111f
