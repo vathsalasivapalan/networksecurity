@@ -91,4 +91,4 @@ Navigate to: `http://localhost:8000/docs`
 ## Author
 
 **Vathsala Sivapalan**  
-[GitHub](https://github.com/vathsalasivapalan) | [LinkedIn](https://www.linkedin.com/in/vathsala-sivapalan)
+[GitHub](https://github.com/vathsalasivapalan) 
